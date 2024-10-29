@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SearchBarComponent } from '../search-bar/search-bar.component';
 import { MovieService } from '../movie.service';
 import { CommonModule } from '@angular/common';
@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './movie-list.component.html',
   styleUrl: './movie-list.component.css'
 })
-export class MovieListComponent {
+export class MovieListComponent implements OnInit{
   movies!:any;
 
   constructor(private movieService: MovieService) {}
@@ -55,5 +55,8 @@ export class MovieListComponent {
 
 
     });
+  }
+  ngOnInit(): void {
+      this.searchMovie("Mission impossible");
   }
 }
