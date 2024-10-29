@@ -1,0 +1,9 @@
+<app-search-bar (searchedTitle) = "searchMovie($event)"></app-search-bar>
+<div class="resultContainer" *ngIf="movies">
+    <div class="card" style="width: 18rem;" *ngFor="let movie of movies" [id]="movie.imdbID" (click)="showDetails(movie.imdbID)">
+        <img class="card-img-top" [src]="movie.Poster" alt="Poster not available" width="300" height="427">
+        <div class="card-body">
+            <p class="card-text">{{movie.Title}}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="resultContainer" *ngIf="movieService.showWishList">
+    <div class="card" style="width: 18rem;" *ngFor="let entry of this.movieService.wishList | keyvalue" [id]="entry.value.imdbID" (click)="showDetails(entry.value)">
+        <img class="card-img-top" [src]="entry.value.Poster" alt="Poster not available" width="300" height="427">
+        <div class="card-body">
+            <p class="card-text">{{entry.value.Title}}</p>
+        </div>
+    </div>
+</div>

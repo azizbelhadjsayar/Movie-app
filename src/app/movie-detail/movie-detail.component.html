@@ -1,0 +1,17 @@
+<div *ngIf="this.movieService.selectedMovieDetails" class="movieContainer">
+    <img [src]="this.movieService.selectedMovieDetails.Poster" alt="">
+    <div class="infos">
+        <i [ngStyle]="this.movieService.HeartStyle" class="fa-solid fa-heart" (click)="this.movieService.addDeleteWishList(this.movieService.selectedMovieDetails.imdbID)"></i>
+        <h2>{{this.movieService.selectedMovieDetails.Title}}</h2>
+        <p><span style="color: rgb(255, 247, 0); font-size: 22px;">Release date: </span>{{this.movieService.selectedMovieDetails.Released}}</p>
+        <p><span style="color: rgb(255, 247, 0); font-size: 22px;">Type: </span>{{this.movieService.selectedMovieDetails.Type}}</p>
+        <p><span style="color: rgb(255, 247, 0); font-size: 22px;">Genre: </span>{{this.movieService.selectedMovieDetails.Genre}}</p>
+        <p><span style="color: rgb(255, 247, 0); font-size: 22px;">Length: </span>{{this.movieService.selectedMovieDetails.Runtime}}</p>
+        <p><span style="color: rgb(255, 247, 0); font-size: 22px;">Writer(s): </span>{{this.movieService.selectedMovieDetails.Writer}}</p>
+        <p><span style="color: rgb(255, 247, 0); font-size: 22px;">IMDb rating: </span>{{this.movieService.selectedMovieDetails.imdbRating}}/10</p>
+        <p><span style="color: rgb(255, 247, 0); font-size: 22px;">Director: </span>{{this.movieService.selectedMovieDetails.Director}}</p>
+        <p><span style="color: rgb(255, 247, 0); font-size: 22px;">Country: </span>{{this.movieService.selectedMovieDetails.Country}}</p>
+        <p style="color: rgb(255, 247, 0); font-size: 22px;">Overview</p>
+        <p>{{this.movieService.selectedMovieDetails.Plot}}</p>
+    </div>
+</div>
